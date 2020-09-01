@@ -89,8 +89,7 @@ by Prelude.")
 (add-to-list 'load-path prelude-core-dir)
 (add-to-list 'load-path prelude-modules-dir)
 (add-to-list 'load-path prelude-vendor-dir)
-(add-to-list 'default-frame-alist
-             '(font . "Monaco-16"))
+(set-default-font "monaco-16")
 
 (prelude-add-subfolders-to-load-path prelude-vendor-dir)
 
@@ -175,4 +174,3 @@ by Prelude.")
 (global-set-key [f8] 'neotree-toggle)
 
 ;;; init.el ends here
-
