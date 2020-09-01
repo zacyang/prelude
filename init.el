@@ -1,4 +1,4 @@
-;;; init.el --- Prelude's configuration entry point.
+;;; Init.el --- Prelude's configuration entry point.
 ;;
 ;; Copyright (c) 2011-2020 Bozhidar Batsov
 ;;
@@ -88,6 +88,8 @@ by Prelude.")
 (add-to-list 'load-path prelude-core-dir)
 (add-to-list 'load-path prelude-modules-dir)
 (add-to-list 'load-path prelude-vendor-dir)
+(set-default-font "monaco-16")
+
 (prelude-add-subfolders-to-load-path prelude-vendor-dir)
 
 ;; reduce the frequency of garbage collection by making it happen on
@@ -112,7 +114,7 @@ by Prelude.")
 (require 'prelude-mode)
 (require 'prelude-editor)
 (require 'prelude-global-keybindings)
-
+(require 'prelude-helm-everywhere)
 ;; macOS specific settings
 (when (eq system-type 'darwin)
   (require 'prelude-macos))
@@ -151,4 +153,14 @@ by Prelude.")
  ;; greet the use with some useful tip
  (run-at-time 5 nil 'prelude-tip-of-the-day))
 
+(nyan-mode)
+;;(global-set-key (kdb "M-x") 'helm-M-x)
+
+;;;nerd tree
+
+(require 'neotree)
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+(global-set-key [f8] 'neotree-toggle)
+
 ;;; init.el ends here
+
