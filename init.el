@@ -88,7 +88,8 @@ by Prelude.")
 (add-to-list 'load-path prelude-core-dir)
 (add-to-list 'load-path prelude-modules-dir)
 (add-to-list 'load-path prelude-vendor-dir)
-(set-default-font "monaco-16")
+(add-to-list 'default-frame-alist
+             '(font . "Monaco-16"))
 
 (prelude-add-subfolders-to-load-path prelude-vendor-dir)
 
