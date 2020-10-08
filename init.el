@@ -126,7 +126,7 @@ by Prelude.")
   (require 'prelude-linux))
 
 ;; WSL specific setting
-(when (getenv "WSLENV")
+(when (and (eq system-type 'gnu/linux) (getenv "WSLENV"))
   (require 'prelude-wsl))
 
 ;; Windows specific settings
